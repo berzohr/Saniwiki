@@ -1,0 +1,46 @@
+.table-responsive, .py-4 {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.adminListTools{
+    float: right;
+    margin-left: 5px;
+}
+
+.backbar{
+    background-size: cover;
+    height: 300px;
+}
+
+main.py-4 {
+    padding-top: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.shadow-bg {
+    height: 100%;
+    background-color: rgba(32, 147, 213, 0.5);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.shadow-bg > h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.container.table-responsive {
+
+    padding-top: 25px;
+
+}
+
+#postsTable_wrapper, #usersTable_wrapper {
+
+    padding-top: 27px;
+
+}

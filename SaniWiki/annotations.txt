@@ -1,0 +1,78 @@
+Fonti:
+https://laraveldaily.com/generating-fake-seeds-data-with-faker-package/
+https://laravel-news.com/your-first-laravel-application
+
+
+//          NOME ROUTE      NOMECONTROLLER @ FUNZIONE
+Route::post('addCategory', 'FormController@store');
+
+
+
+#LARAVEL - COMANDI DA ESEGUIRE DOPO UN CLONE#
+
+- Modificare o Aggiungere file .env con queste modifiche:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=saniwiki
+DB_USERNAME=saniwiki
+DB_PASSWORD=sanED1
+
+
+- Ricreare il db in locale da zero
+
+
+- cd cartella
+composer install
+
+
+- cd cartella
+php artisan migrate
+
+
+- cd cartella
+php artisan key:generate
+
+
+- cd cartella
+php artisan db:seed
+(facoltativo, serve per riempire il db con dati fake)
+
+
+-- RIGENERARE DB CON DATI SEED
+php artisan migrate:fresh --seed
+
+
+--- PROBLEMI ---
+Seed non funziona correttamente, comando:
+composer dump-autoload
+
+
+--- PUSH SUL MASTER ---
+Putty:
+Host:       isin11.dti.supsi.ch
+username:   saniwiki
+password:   faradenza
+
+comandi:
+cd /var/www/html/saniwiki/saniwiki-progetto-studenti/
+git pull   (-> credenziali scm)
+
+cd SaniWiki
+php artisan migrate:fresh --seed
+
+
+--- PHP UNIT TEST ---
+Per installare phpunit, entrare nella cartella del progetto principale:
+composer global require phpunit/phpunit
+composer global require phpunit/dbunit
+
+Per avviare tutti i test, nella cartella principale:
+phpunit
+
+
+######### TODO 28.12.2018 ##########
+- Aggiungere il nome della categoria quando si accede alla pagina dei posts
+- Aggiungere immagini diverse per ogni post
+- Aggiungere, ad ogni articolo, chi è stato l'ultimo a modificarlo e in quale data (solo chi è writer può vederlo)
+

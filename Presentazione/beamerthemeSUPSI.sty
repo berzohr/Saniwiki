@@ -1,0 +1,335 @@
+%
+%  File created: 3 Feb, 2013
+%  Author: Sandra Gabaglio
+%  sandra.gabaglio@supsi.ch
+%
+
+
+%%% Defining the preamble
+\mode<presentation>
+\usepackage{pgfcomp-version-0-65}
+\usepackage{color}
+\usepackage{lmodern}
+
+%\usepackage[scaled]{helvet}
+
+%serve per la definizione del footer
+\useoutertheme[subsection=false]{smoothbars}
+
+
+
+%%%%%%%%%%%%%%
+%%
+%%		Color theme
+%%
+%%%%%%%%%%%%%%
+
+
+\definecolor{Ftitle}{rgb}{0, 0, 0} % (rgb - 0, 0, 0) is nothing but black
+
+% To specify the integer values of "RGB", ranging from 0 t0 255, we need to use the "RGB" in CAPS or UPPERCASE 
+\definecolor{Descitem}{RGB}{0, 0, 139} % Darkish blue
+
+\definecolor{StdTitle}{RGB}{26, 33, 141}
+\definecolor{StdBody}{RGB}{213,24,0}
+
+\definecolor{AlTitle}{RGB}{255, 190, 190}
+\definecolor{AlBody}{RGB}{213,24,0}
+
+\definecolor{ExTitle}{RGB}{201, 217, 217}
+\definecolor{ExBody}{RGB}{213,24,0}
+
+
+%%%%%%
+% Assign colours to different constitutens of the presentation as per the requirements.
+%%%%%%
+
+% This sets the colour of the title of the presentation and titles of all the slides in the presentation to black.
+\setbeamercolor{frametitle}{fg = Ftitle}
+\setbeamercolor{title}{fg = Ftitle}
+
+% In case you choose to display the Table of Contents, or the Outline slide.
+\setbeamercolor{section in toc}{fg = Ftitle}
+\setbeamercolor{section in toc shaded}{fg = Ftitle} 
+
+% The colour of all the items, subitems and and subsubitems are set to black.
+\setbeamercolor{item}{fg = Ftitle}
+\setbeamercolor{subitem}{fg = Ftitle}
+\setbeamercolor{subsubitem}{fg = Ftitle}
+
+% This sets the color for each item heading of the description environment.
+\setbeamercolor{description item}{fg = Descitem}
+
+% NOTE: Setting the color black for all the items also sets in black for other environments like enumerate.
+
+% We also need to fix the colours for captions for figures and tables.
+\setbeamercolor{caption}{fg = Ftitle}
+\setbeamercolor{caption name}{fg = Ftitle}
+
+% Standard block
+%\setbeamercolor{block body}{bg = StdLight}
+%\setbeamercolor{block title}{fg = black, bg = Std}
+
+\setbeamercolor{block title}{fg = Descitem, bg = StdTitle!15!white}
+\setbeamercolor{block body}{bg = StdBody!5!white}
+
+% Alert block
+\setbeamercolor{block title alerted}{bg = AlTitle}
+\setbeamercolor{block body alerted}{bg = AlBody!5!white}
+
+% Example block
+\setbeamercolor{block title example}{bg = ExTitle}
+\setbeamercolor{block body example}{bg = ExBody!5!white}
+
+
+% Colour of the text
+\setbeamercolor{normal text}{fg = Ftitle}
+
+
+
+
+%%%%%%%%%%%%%%
+%%
+%%		Font theme
+%%
+%%%%%%%%%%%%%%
+
+
+% Here we are using default fonts
+\usefonttheme{professionalfonts}
+
+% Font for the presentation title
+\setbeamerfont{title}{size = \huge}
+
+% Font of the frame titles
+\setbeamerfont{frametitle}{size = \Large}
+
+% Font of the table of content
+\setbeamerfont{section in toc}{parent=structure, size=\large}
+\setbeamerfont{subsection in toc}{parent=structure, size=\scriptsize}
+\setbeamerfont{section text in toc}{parent=section in toc, size=\largesize}
+\setbeamerfont{subsection text in toc}{parent=subsection in toc, size=\scriptsize}
+
+%\usefonttheme[options]{serif}
+
+%%%%%%%%%%%%%%
+%%
+%%		Inner theme
+%%
+%%%%%%%%%%%%%%
+
+
+% Rounded theme for the overall "feel" of the presentation
+\useinnertheme{rounded}
+%\useinnertheme[shadow]{rounded}
+
+% Instead of rounded circles, we will use triangles as the indicator for items.
+\setbeamertemplate{itemize items}[triangle]
+
+% The default option for enumerate environment removes the circles around the numbers provided by the "rounded" inner theme. Just simple numbers remain.
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{section in toc}[default]
+\setbeamertemplate{subsection in toc}[default]
+%\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
+
+
+
+%%%%%%%%%%%%%%
+%%
+%%		Outer theme
+%%
+%%%%%%%%%%%%%%
+
+
+% First the horizontal line on the top portion of the slides
+% Add a horizontal line that runs from left of the slide to the right, just below the logo.  
+%\newcommand{\LogoLine}{%
+%  \raisebox{-12mm}[0pt][0pt]{%
+%   	\begin{pgfpicture}{0mm}{7mm}{0mm}{0mm}
+%    	 \pgfsetlinewidth{0.28mm}
+%    	  \color{gray}
+%      	\pgfline{\pgfpoint{-3mm}{1mm}}{\pgfpoint{10.8cm}{1mm}}
+%    \end{pgfpicture}
+%  }
+%}
+
+% Include the line that we just created in the headline
+%\setbeamertemplate{headline}[text line]{\LogoLine}
+
+
+% Now the logo. As it turns out. I could not include the logo in the headline. If I tried to, the headline kept shifting downwards.
+% Acting a little smart and lazy, I just included the logo in the right sidebar and shifted it up. 
+\setbeamertemplate{sidebar canvas left}{
+	\vspace*{8pt}\hspace*{10pt}
+	{\includegraphics[height=10pt]{SUPSI.png}}
+} 
+
+
+\setbeamertemplate{frametitle}{
+	\vspace*{30pt}\hspace*{-15pt}\insertframetitle
+}
+
+
+%%%%%
+% Definition of the footline
+%%%%%
+
+  	
+\setbeamercolor{separation line}{use=structure,bg=black}
+\setbeamertemplate{footline} { 
+ \usebeamerfont{structure}
+  \pgfuseshading{beamer@barshade}
+  \ifbeamer@sb@subsection
+    \vskip-9.75ex
+  \else
+    \vskip-7ex
+  \fi
+  \begin{beamercolorbox}[colsep=0.2pt]{upper separation line foot}\end{beamercolorbox}
+  \begin{beamercolorbox}[ignorebg,ht=2.25ex,dp=3.75ex]{section in head/foot}
+	\insertnavigation{\paperwidth}
+  \end{beamercolorbox}
+  \ifbeamer@sb@subsection
+    \begin{beamercolorbox}[colsep=0.5pt]{upper separation line foot}\end{beamercolorbox}
+    \begin{beamercolorbox}[ignorebg,ht=2.125ex,dp=1.125ex, leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}
+	\usebeamerfont{subsection in head/foot}\insertsubsectionhead
+    \end{beamercolorbox}
+  \fi
+}
+
+\setbeamertemplate{headline}{}
+\makeatother
+
+% Remove the navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%%%
+%%
+%%		Section page
+%%
+%%%%%%%%%%%%%%
+
+\defbeamertemplate*{mysection page}{default}[1][]
+{
+  \centering
+    \begin{beamercolorbox}[sep=8pt,center,#1]{section title}
+      \usebeamerfont{title}
+      \usebeamercolor[fg]{title}\insertsection\par
+    \end{beamercolorbox}
+}
+\newcommand*{\mysectionpage}{\usebeamertemplate*{mysection page}}
+
+
+%%%%%%%%%%%%%%
+%%
+%%		Title page
+%%
+%%%%%%%%%%%%%%
+
+
+\makeatletter
+	\newcommand{\titolo}[1]{\def \@titolo {#1}}
+	\newcommand{\studente}[1]{\def \@studente {#1}}
+	\newcommand{\relatore}[1]{\def \@relatore {#1}}
+	\newcommand{\correlatore}[1]{\def \@correlatore {#1}}
+	\newcommand{\committente}[1]{\def \@committente {#1}}
+	\newcommand{\corso}[1]{\def \@corso {#1}}
+	\newcommand{\opzione}[1]{\def \@opzione {#1}}
+	\newcommand{\anno}[1]{\def \@anno {#1}}
+	\newcommand{\data}[1]{\def \@date {#1}}
+	\studente{}
+	\relatore{}
+	\correlatore{}
+	\committente{}
+	\corso{}
+	\opzione{}
+	\anno{} 
+	\data{}
+\makeatother
+
+
+\newcommand{\linea}[0]{\vspace*{1em}\noindent\makebox[\linewidth][l]{\rule{0.95\textwidth}{0.5pt}}\\}
+
+\newcommand{\etichettetitolo}{\fontsize{8pt}{8pt}\fontseries{m}\selectfont}
+\newcommand{\nomititolo}{\vspace{0.5em}\fontsize{10pt}{10pt}\selectfont}
+%%\newcommand{\nomititolo}{\vspace{1em}\fontsize{10pt}{10pt}\fontseries{bx}\selectfont}
+
+\makeatletter
+\newcommand{\campo}[1]{
+	\ifx {#1} \@empty
+		--
+	\else
+		\nomititolo{{#1}}
+	\fi
+}
+\makeatother	
+% Pagina titolo
+\makeatletter
+\def \maketitle {
+
+	\begin{frame}[plain]
+	{\makebox(0,60){\put(12,10){\includegraphics[width=150mm]{logoprima}}}}
+	\textrm{\Large{\@titolo}}
+	\\[0.2em]
+	\linea
+		\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushleft}
+				\etichettetitolo{Studente} \\
+				\campo{\@studente}
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushleft}
+				\campo{\@correlatore}
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushleft}
+				\etichettetitolo{Relatore} \\
+				\campo{\@relatore}
+			\end{flushleft}
+		\end{minipage}
+	\\[0.2em]
+	\linea
+		\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushleft}
+				\etichettetitolo{Corso di laurea} \\
+				\campo{\@corso}
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushleft}
+				\campo{\@opzione}
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushleft}
+				\etichettetitolo{Committente} \\
+				\campo{\@committente} \\	
+			\end{flushleft}
+		\end{minipage}
+	\\[0.2em]
+	\linea
+		\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushleft}
+				\etichettetitolo{Anno} \\
+				\campo{\@anno}
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushleft}
+				\etichettetitolo{Data} \\
+				\campo{\@date}
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.3\textwidth}
+			\begin{flushleft}
+			\end{flushleft}
+		\end{minipage}
+ 		\vspace{1cm}
+		\makebox(0,0){\put(20,80){\includegraphics[height=40mm]{logoverticale}}}
+	\end{frame}
+}
+\makeatother
+
+\mode
+<all>  	  

@@ -1,0 +1,63 @@
+
+/*body{*/
+    /*background: linear-gradient(25deg, #8e54e9, #4776e6, #8e54e9);*/
+    /*background-size: 200% 200%;*/
+    /*animation: colorchange 50s ease-out infinite;*/
+/*}*/
+
+/*@keyframes colorchange {*/
+    /*0% {*/
+        /*background-position: 0 99%;*/
+    /*}*/
+    /*50% {*/
+        /*background-position: 100% 1%;*/
+    /*}*/
+    /*100% {*/
+        /*background-position: 0% 99%;*/
+    /*}*/
+/*}*/
+
+
+.card{
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 40%;
+}
+
+ion-button{
+    width: 100%;
+    text-align: center;
+}
+
+.item-input {
+    background-color: rgba(0,0,0,0.3) !important;
+    color: white;
+//border: 1px solid rgba(0,0,0,0.1);
+}
+
+.card-header {
+    background-color: #2093d5 !important;
+    color: white;
+}
+
+.sanilogo {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 570px) {
+    .sanilogo {
+        width: 150px !important;
+        height: 150px !important;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .sanilogo {
+        position: relative;
+    }
+}
+

@@ -1,0 +1,166 @@
+.category-card{
+    border: 1px solid #dcdbe7;
+    margin-bottom: 25px;
+
+}
+
+.category-card-content{
+    background-image: linear-gradient(to right, #2093D5 , #6CC5E4);
+    height: 180px;
+}
+
+.category_container:hover {
+    text-decoration: none;
+}
+.category-card-content:hover{
+    z-index: 1;
+    background-image: linear-gradient(to right, #0663b1 , #3997CC);
+}
+
+.category-card-title{
+    background-color: white;
+    text-transform: uppercase;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 130%;
+    font-weight: bold;
+    color: #1f85c0;
+    height: 50px;
+    padding-left: 10px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.category-image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: -85px;
+    margin-left: -50px;
+    color: white;
+}
+
+.category-image-font {
+    color: white;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.add-category {
+    background-image: linear-gradient(to right, #002AA7 , #2093D5) !important;
+}
+
+.add-category:hover {
+    background-image: linear-gradient(to right, #2093D5 , #6CC5E4) !important;
+}
+
+.add-category > i {
+
+    padding-top: 7px;
+
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hide{
+    display: none !important;
+    -webkit-transition: opacity 500ms ease-out;
+    -moz-transition: opacity 500ms ease-out;
+    transition: opacity 500ms ease-out;
+}
+
+.show{
+    display: block;
+    -webkit-transition: opacity 500ms ease-in;
+    -moz-transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-in ;
+}
+
+.custom-file-label:after{
+    color: #fff !important;
+    background-color: #3490dc !important;
+}
+
+#addNewSection, #addNewSectionEdit{
+    margin-top: 10px;
+    background-color: #3F51B5;
+    color: white;
+    padding: 5px 10px;
+    font-size: small;
+}
+
+.category-card-title span {
+    line-height: 15px !important;
+    font-size: 16px;
+}
+
+.adminTools{
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 30px;
+}
+
+.adminTools:hover::after{
+    z-index: -1;
+}
+
+/* -------------- MODALS --------------*/
+.danger{
+    margin-top: 20px;
+    color: red;
+    font-size: small;
+    font-weight: bold;
+}
+
+.deleteSectionDiv {
+    position: relative;
+    height: 30px;
+    margin-top: 13px;
+}
+
+.deleteSection {
+    position: absolute;
+    right: 0;
+}
+
+

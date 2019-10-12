@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Introduzione}{3}{0}{1}
+\beamer@sectionintoc {2}{Analisi}{5}{0}{2}
+\beamer@sectionintoc {3}{Studio delle Soluzioni}{18}{0}{3}
+\beamer@sectionintoc {4}{Progettazione}{22}{0}{4}
+\beamer@sectionintoc {5}{Implementazione}{28}{0}{5}
+\beamer@sectionintoc {6}{Demo}{30}{0}{6}
+\beamer@sectionintoc {7}{Conclusioni}{31}{0}{7}
